@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <title>Blood Availability</title>
+    <!-- <link type="text/css" rel="stylesheet" href="styles.css" -->
+    <%- include('css/bloodAvail'); %>
+
+</head>
+<body>
+    
+            <div class="comp_table_cont">
+                <table>
+                    <tr>
+                        <td>
+                            <form autocomplete="off" onsubmit="onFormSubmit()" method="post" action="/hospitalblood/<%= hospital._id %>">
+                                
+                                <div>
+                                    <label for="bloodCat">Blood Category :</label>
+                                    <input type="text" name="bloodCat" id="bloodCat">
+                                </div>
+                                <div>
+                                    <label for="qty">Quantity :</label>
+                                    <input type="number" name="qty" id="qty">
+                                </div>
+            
+                                <div class="form_action--button">
+                                    <input id="submit_btn" type="submit" value="Submit">
+                                    <input id="reset_btn" type="reset" value="Reset">
+                                </div>
+                            </form>
+            
+                            <td>
+                                <div class="table_blood_cat_cont">
+                                    <div>
+                                        
+                                        <table class="list" id="storeList">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    <th>Blood Category </th>
+                                                    <th>Quantity</th>
+                                              
+                                                </tr>
+                    
+                                            </thead>
+                    
+                                            <tbody>
+                                                <tr>
+                                                    <td>A -</td>
+                                                    <td id="general_total1"><%=hospital.aneg%><span> ml</span></td>
+                                                        
+                                                    
+                                                    <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A +</td>
+                                                    <td id="general_total2"><%=hospital.apos%><span> ml</span></td>
+                                                    <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>AB -</td>
+                                                    <td id="general_total3"><%=hospital.abneg%><span> ml</span></td>
+                                                    <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>AB +</td>
+                                                    <td id="general_total4"><%=hospital.abpos%><span> ml</span></td>
+                                                    <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table class="list" id="storeList">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    <th>Blood Category </th>
+                                                    <th>Quantity</th>
+                                              
+                                                </tr>
+                    
+                                            </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>B -</td>
+                                            <td id="general_total5"><%=hospital.bneg%><span> ml</span></td>
+                                            <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>B +</td>
+                                            <td id="general_total6"><%=hospital.bpos%><span> ml</span></td>
+                                            <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>O -</td>
+                                            <td id="general_total7"><%=hospital.oneg%><span> ml</span></td>
+                                            <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>O +</td>
+                                            <td id="general_total8"><%=hospital.opos%><span> ml</span></td>
+                                            <td><button class="cont_button" onClick="onEdit(this)">Edit</button> </td>
+                                        </tr>
+                                        </tbody>
+                                    </table> 
+                                    </div>
+                                </div>
+                                
+                                
+                            </td>
+                           
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+    
+   
+    
+</body>
+<script>
+    function onEdit(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("bloodCat").value = selectedRow.cells[0].innerHTML;
+        let st=selectedRow.cells[1].innerHTML
+        let str=st.toString();
+        let k=(str.slice(0,str.length-1));
+        
+        let n = parseInt(k);
+        document.getElementById("qty").value = n;
+       
+    }
+    
+    </script>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Patient register</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+
+    $(document).ready(function () {
+      $(".login").hide();
+      $(".register_li").addClass("active");
+
+      $(".login_li").click(function () {
+        $(this).addClass("active");
+        $(".register_li").removeClass("active");
+        $(".login").show();
+        $(".register").hide();
+      })
+
+      $(".register_li").click(function () {
+        $(this).addClass("active");
+        $(".login_li").removeClass("active");
+        $(".register").show();
+        $(".login").hide();
+      })
+    });
+  </script>
+
+  <%- include('css/PatientReg'); %>
+
+</head>
+
+<body>
+  <div class="navsec">
+    <nav class="navsection">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120" height="90"></label>
+      <ul class="navul">
+        <li class="navli"><a class="active nava" href="/">HOME</a></li>
+            <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+            <li class="navli"><a class="nava" href="/">TRACK</a></li>
+            <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+            <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+            <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrap_form_wrap">
+    <div class="wrapper">
+      <div class="left">
+
+        <img src="images/patient.gif" alt="hospitallog">
+      </div>
+      <div class="right">
+        <div class="tabs">
+          <ul>
+            <li class="register_li">Register</li>
+            <li class="login_li">login</li>
+          </ul>
+        </div>
+
+        <form action="/PatientReg" method="post">
+
+        <div class="register">
+          <div class="input_field">
+            <input type="text" name="pname" placeholder="Enter Name" class="input" required>
+          </div>
+          <div class="input_field">
+            <input type="email" name="pemail" placeholder="Enter E-mail" class="input" pattern=".+@.+.com" size="30" required>
+          </div>
+          <div class="input_field">
+            <input type="text" name="pmn" placeholder="Enter Mobile Number" class="input" minlength="10" maxlength="10" required>
+          </div>
+          <div class="flex">
+            <div class="input_field">
+              <input type="text" name="page" placeholder="Age" class="input" required>
+            </div>
+            <div class="input_field" style="margin-left: 1rem;">
+              <input type="text" name="pheight" placeholder="Height" class="input" required>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="input_field">
+              <input type="text" name="pweight" placeholder="Weight" class="input" required>
+            </div>
+            <div class="input_field" style="margin-left: 1rem;">
+              <input type="text" name="pbp" placeholder="BP" class="input" required>
+            </div>
+          </div>
+          <div class="input_field">
+            <input type="password" name="ppass" placeholder="Enter Password" class="input" required>
+          </div>
+          <div class="input_field">
+            <input type="password" placeholder="Confirm Password" class="input" required>
+          </div>
+          <!-- <div class="btn" id="btn" type="submit" onclick="btn"><a href="#">Register</a></div> -->
+          <div class="btn" id="btn" onclick="btn">
+            <input type="submit" value="Register">
+          </div>
+        </div>
+      </form>
+        <form action="/newPatientLogin" method="post">
+          <div class="login">
+            <div class="input_field">
+              <input type="email" name="pemail" placeholder="E-mail" class="input" pattern=".+@.+.com" size="30" required>
+            </div>
+            <div class="input_field">
+              <input type="password" name="ppass" placeholder="Password" class="input" required>
+            </div>
+            <a href="#">Forget Password?</a>
+            <!-- <div class="btn"><a href="#">Login</a></div> -->
+            <div class="btn" id="btn" onclick="btn">
+              <input type="submit" value="Login">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer_container">
+      <div class="sec footer_aboutus">
+        <h2>Who are We</h2>
+        <!-- <img src="Frame 15.png" alt=""> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+          minima tenetur nesciunt quidem ab facilis quo!</p>
+        <ul class="footer_sci">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec footer_quicklinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="#">Track</a></li>
+          <li><a href="/joinOurTeam">Join Our Team</a></li>
+          <li><a href="#">Review</a></li>
+        </ul>
+      </div>
+
+      <div class="sec footer_quicklinks">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">Bed Availability</a></li>
+          <li><a href="/DonorHome">Blood Bank</a></li>
+          <li><a href="/bookApp">Book Appointment</a></li>
+          <li><a href="#">24/7 Ambulance</a></li>
+        </ul>
+      </div>
+      <div class="footer_sec_contact">
+        <h2>Contact Us</h2>
+        <ul class="footer_contact_info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+              Jabalpur, Madhya Pradesh 482003</span>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="tel:+12345678900">098935 56449</a>
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  <div class="footer_copyrightText">
+    <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+  </div>
+</body>
+
+</html>

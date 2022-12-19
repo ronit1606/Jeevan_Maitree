@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeevan Maitree</title>
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <!---font awsome cdn link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!-- fav icon -->
+  <link rel="icon" href="logo.png">
+
+  <%- include('css/index'); %>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+
+</head>
+
+<body>
+
+  <!---header section starts-->
+  <!-- <nav class="upper-nav">
+
+    </nav> -->
+
+  <div class="navsec">
+    <nav class="navsection">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120"
+          height="90"></label>
+      <ul class="navul">
+        <li class="navli"><a class="active nava" href="#home">HOME</a></li>
+        <li class="navli"><a class="nava" href="#services">SERVICES</a></li>
+        <li class="navli"><a class="nava" href="#services1">TRACK</a></li>
+        <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+        <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+        <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+      </ul>
+    </nav>
+    </section>
+
+    <!---header section ends-->
+
+    <!---home section starts-->
+
+    <section class="home" id="home">
+
+      <div class="image">
+        <img src="images/home.gif" alt="">
+      </div>
+
+      <div class="content">
+        <h3>We Take Care of Your Health</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi cumque, quia aliquam error enim
+          accusantium!</p>
+        <a href="/aboutUs" class="btn"> Know More <span class="fa-solid fa-chevron-right"> </span> </a>
+      </div>
+
+    </section>
+
+    <!---home section ends-->
+
+    <!---benifits section starts-->
+
+    <section class="benifits">
+      <h1 class="heading">We <span>PRovide</span></h1>
+
+      <div class="box">
+        <div class="card">
+          <div class="imgBx">
+            <img src="images/p1.png" alt="blood availability search">
+          </div>
+          <div class="details">
+            <h2>Quick Treatement</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="images/p2.png" alt="Blood camp registeration">
+          </div>
+          <div class="details">
+            <h2>Easy Access</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="images/p3.png" alt="Donor Login">
+          </div>
+          <div class="details">
+            <h2>24/7 Support</h2>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!---benifits section ends-->
+
+    <!---services section starts-->
+
+    <section class="services" id="services">
+
+      <h1 class="heading">Our <span>Services</span></h1>
+
+      <div class="box">
+
+        <div class="card card2">
+          <a href="/hospitalbeds">
+            <div class="imgBx">
+              <img src="images/beds.webp" alt="images">
+            </div>
+            <div class="details">
+              <h2>Beds availability</h2>
+            </div>
+          </a>
+        </div>
+
+
+
+        <div class="card card2">
+          <a href="/DonorHome">
+            <div class="imgBx">
+
+              <img src="images/blood-donation-3142071-2621400.webp" alt="images">
+            </div>
+            <div class="details">
+              <h2>Blood Bank</h2>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="card card2">
+          <a href="/bookApp">
+            <div class="imgBx">
+              <img src="images/appointment.webp" alt="images">
+            </div>
+            <div class="details">
+              <h2>Book Appointment</h2>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="card card2">
+          <div class="imgBx">
+            <img src="images/ambulance.webp" alt="images">
+          </div>
+          <div class="details">
+            <h2>24/7 Ambulance</h2>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!---services section ends-->
+
+    <!--various login starts-->
+
+    <section class="services1" id="services1">
+
+      <h1 class="heading"><span>Login</span></h1>
+
+
+      <div class="box-container1">
+
+
+        <div class="box1">
+          <i class="fa-solid fa-user"></i>
+          <a href="/PatientReg" class="btn1">Patients Login <span class="fa-solid fa-chevron-right"></span></a>
+        </div>
+
+        <div class="box1">
+          <i class="fa-solid fa-hospital"></i>
+          <a href="/hosReg" class="btn1">Hospital Login <span class="fa-solid fa-chevron-right"></span></a>
+        </div>
+
+        <div class="box1">
+          <i class="fa-solid fa-droplet"></i>
+          <a href="/bloodBankReg" class="btn1">Blood Bank Login <span class="fa-solid fa-chevron-right"></span></a>
+        </div>
+
+
+        <div class="box1">
+          <i class="fa-solid fa-truck-medical"></i>
+          <a href="#" class="btn1">Ambulance Login<span class="fa-solid fa-chevron-right"></span></a>
+        </div>
+
+      </div>
+    </section>
+    <!--various login ends-->
+
+    <!---book appointment section starts-->
+
+    <section class="baineasy" id="baineasy">
+
+      <h1 class="heading">Book <span>Appointment</span> Easily</h1>
+
+      <div class="box3">
+        <div class="card3">
+          <div class="imgBx3">
+            <img src="images/1.webp" alt="blood availability search">
+          </div>
+          <div class="details">
+            <h2>Login / Register</h2>
+          </div>
+        </div>
+
+        <div class="card3">
+          <div class="imgBx3">
+            <img src="images/2.webp" alt="Blood camp registeration">
+          </div>
+          <div class="details">
+            <h2>Fill up the details</h2>
+          </div>
+        </div>
+
+        <div class="card3">
+          <div class="imgBx3">
+            <img src="images/3.png" alt="Donor Login">
+          </div>
+          <div class="details">
+            <h2>confirmation within 24hrs</h2>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!---book appointment section ends-->
+
+<!---FAQ section starts-->
+<section class="faq">
+  <div class="faq_container">
+    <h1 class="heading"> <span>Frequently Asked Question</span></h1>
+
+    <img src="images/faq.webp" alt="Frequently Asked Question">
+
+    <details>
+      <summary>How do I get a new password?</summary>
+      <div>
+        <em>The tags details summary</em>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I know that my appointment is successfully booked?</summary>
+      <div>
+        <em>Once an appointment is successfully done, the system send an SMS confirmation to the registered mobile
+          number and also generates and displays the appointment slip. Also, on the dashboard, the “Schedule” tab
+          changes to “Reschedule” and the appointment details are displayed. A tab for cancellation is also
+          displayed after the appointment has been scheduled.</em>
+      </div>
+    </details>
+
+    <details>
+      <summary>How Can I donate blood?</summary>
+      <div>
+        <em>The tags details summary</em>
+      </div>
+    </details>
+
+    <details>
+      <summary>How to check the nearest hospital?</summary>
+      <div>
+        <em>The tags details summary</em>
+      </div>
+    </details>
+
+    <details>
+      <summary>How to connect with the Blood bank?</summary>
+      <div>
+        <em>The tags details summary</em>
+      </div>
+    </details>
+
+    <details>
+      <summary>Do I have an option for cancellation of appointment?</summary>
+      <div>
+        <em>Yes, you can cancel an appointment already scheduled. You can also reschedule the appointment and choose
+          another date or time slot of your convenience.</em>
+      </div>
+    </details>
+
+  </div>
+</section>
+<!---FAQ section ends-->
+
+    <!---reviews section starts-->
+
+    <section class="reviews" id="reviews">
+
+      <h1 class="heading">Reviews</h1>
+
+      <div class="box">
+        <div class="card card4">
+          <div class="imgBx rev">
+            <img class="rev" src="images/man1.jpg" alt="blood availability search">
+          </div>
+          <div class="details">
+            <h2>Most Trustworthy Services</h2>
+          </div>
+        </div>
+
+        <div class="card card4">
+          <div class="imgBx rev">
+            <img class="rev" src="images/man2.jpg" alt="Blood camp registeration">
+          </div>
+          <div class="details">
+            <h2>Thanks to rapid services, I was able to start a new life and finally say good-bye to epilepsy.</h2>
+          </div>
+        </div>
+
+        <div class="card card4">
+          <div class="imgBx rev">
+            <img class="rev" src="images/man3.jpg" alt="Donor Login">
+          </div>
+          <div class="details">
+            <h2>Best</h2>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!---reviews section ends-->
+
+    <!---counter section starts-->
+
+    <section class="counter" id="counter">
+      <div class="hero">
+        <div class="counter_row">
+          <div class="counter_col">
+            <div class="counter-box">
+              <i class="fa fa-solid fa-hospital"></i>
+              <h2 class="counterh2" data-number="215">0</h2>
+              <h4>Available Hospital</h4>
+            </div>
+          </div>
+          <div class="counter_col">
+            <div class="counter-box">
+              <i class="fa fa-solid fa-face-smile"></i>
+              <h2 class="counterh2" data-number="101">0</h2>
+              <h4>Satisfied Patient</h4>
+            </div>
+          </div>
+          <div class="counter_col">
+            <div class="counter-box">
+              <i class="fa fa-solid fa-bed-pulse"></i>
+              <h2 class="counterh2" data-number="150">0</h2>
+              <h4>Bed Facility</h4>
+            </div>
+          </div>
+          <div class="counter_col">
+            <div class="counter-box">
+              <i class="fa fa-solid fa-truck-medical"></i>
+              <h2 class="counterh2" data-number="176">0</h2>
+              <h4>Ambulance</h4>
+            </div>
+          </div>
+          <div class="counter_col">
+            <div class="counter-box">
+              <i class="fa fa-solid fa-droplet"></i>
+              <h2 class="counterh2" data-number="293">0</h2>
+              <h4>Blood Bank</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---counter section ends-->
+
+
+    <!---footer section starts-->
+    <footer>
+      <div class="footer_container">
+        <div class="sec footer_aboutus">
+          <h2>Who are We</h2>
+          <!-- <img src="Frame 15.png" alt=""> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+            minima tenetur nesciunt quidem ab facilis quo!</p>
+          <ul class="footer_sci">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <div class="sec footer_quicklinks">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Track</a></li>
+            <li><a href="/joinOurTeam">Join Our Team</a></li>
+            <li><a href="#">Review</a></li>
+          </ul>
+        </div>
+
+        <div class="sec footer_quicklinks">
+          <h2>Services</h2>
+          <ul>
+            <li><a href="#">Bed Availability</a></li>
+            <li><a href="/DonorHome">Blood Bank</a></li>
+            <li><a href="/bookApp">Book Appointment</a></li>
+            <li><a href="#">24/7 Ambulance</a></li>
+          </ul>
+        </div>
+        <div class="footer_sec_contact">
+          <h2>Contact Us</h2>
+          <ul class="footer_contact_info">
+            <li>
+              <span><i class="fa-solid fa-location-dot"></i></span>
+              <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+                Jabalpur, Madhya Pradesh 482003</span>
+            </li>
+
+            <li>
+              <span><i class="fa-solid fa-phone"></i></span>
+              <p><a href="tel:+12345678900">098935 56449</a>
+              </p>
+            </li>
+
+            <li>
+              <span><i class="fa-solid fa-envelope"></i></span>
+              <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </footer>
+    <div class="footer_copyrightText">
+      <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+    </div>
+    <!---footer section ends-->
+
+
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="src\jquery.counterup.min.js"></script> -->
+
+    <script>
+      const workSection = document.querySelector(".counter");
+
+      const workSectionObserve = (entries) => {
+        const [entry] = entries;
+        if (!entry.isIntersecting) return;
+        console.log(entries);
+
+
+        const counterNum = document.querySelectorAll(".counterh2");
+
+        const speed = 100;
+
+        counterNum.forEach((curElem) => {
+
+          const updateNumber = () => {
+            const targetNumber = parseInt(curElem.dataset.number);
+            // console.log(targetNumber);
+            const initialNum = parseInt(curElem.innerText);
+            // console.log(initialNum);
+
+            const incrementNumber = Math.trunc(targetNumber / speed);
+            // console.log(incrementNumber);
+            if (initialNum < targetNumber) {
+              curElem.innerText = `${initialNum + incrementNumber}+`;
+
+              setTimeout(updateNumber, 10);
+            } else {
+              curElem.innerText = `${targetNumber}+`;
+            }
+          };
+
+          updateNumber();
+        });
+      };
+      const workSecObserver = new IntersectionObserver(workSectionObserve, {
+        root: null,
+        threshold: 0,
+      });
+
+      workSecObserver.observe(workSection);
+    </script>
+
+</body>
+
+</html>

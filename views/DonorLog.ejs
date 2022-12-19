@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Login</title>
+  <script src="https://kit.fontawesome.com/ace75cb71d.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <%- include('css/DonorLog'); %>
+</head>
+
+<body>
+  <div class="navsec">
+    <nav class="navsection">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120"
+          height="90"></label>
+      <ul class="navul">
+        <li class="navli"><a class="active nava" href="/">HOME</a></li>
+        <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+        <li class="navli"><a class="nava" href="/">TRACK</a></li>
+        <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+        <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+        <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+  <div class="container">
+    <div class="header">
+      <h3>Donor Login</h3>
+    </div>
+    <hr>
+    <div class="container_2">
+      <div class="left">
+        <div class="left_form">
+          <div class="left_form_1">
+            <div class="left_form_1_content">
+              <form action="/newDonorLogin" method="post">
+                <label for="m_no">Enter Mobile No. :</label>
+                <br>
+                <input type="text" name="mob" id="m_no" class="m_no" placeholder="Enter Mobile Number">
+                <input type="Submit" name="" id="otp" value="Generate OTP!">
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="right">
+        <div>
+          <h1>Register Now!</h1>
+          <br>
+          <div class="text">
+            <span class="icon"><i class="fa-solid fa-check"></i></span>
+            <span class="text1">View/Add your Donations!</span>
+          </div>
+          <div class="text">
+            <span class="icon"><i class="fa-solid fa-check"></i></span>
+            <span class="text1">Update your profile!</span>
+          </div>
+          <div class="text">
+            <span class="icon"><i class="fa-solid fa-check"></i></span>
+            <span class="text1">Manage your Account!</span>
+          </div>
+          <div class="btn" id="submit" onclick="btn">
+            <a href="/DonorReg"> 
+              <input class="reg" type="submit" value="Register">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer_container">
+      <div class="sec footer_aboutus">
+        <h2>Who are We</h2>
+        <!-- <img src="Frame 15.png" alt=""> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+          minima tenetur nesciunt quidem ab facilis quo!</p>
+        <ul class="footer_sci">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec footer_quicklinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="#">Track</a></li>
+          <li><a href="/joinOurTeam">Join Our Team</a></li>
+          <li><a href="#">Review</a></li>
+        </ul>
+      </div>
+
+      <div class="sec footer_quicklinks">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">Bed Availability</a></li>
+          <li><a href="/DonorHome">Blood Bank</a></li>
+          <li><a href="/bookApp">Book Appointment</a></li>
+          <li><a href="#">24/7 Ambulance</a></li>
+        </ul>
+      </div>
+      <div class="footer_sec_contact">
+        <h2>Contact Us</h2>
+        <ul class="footer_contact_info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+              Jabalpur, Madhya Pradesh 482003</span>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="tel:+12345678900">098935 56449</a>
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  <div class="footer_copyrightText">
+    <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+  </div>
+
+</body>
+
+</html>

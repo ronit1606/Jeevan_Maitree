@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"
+    integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/ace75cb71d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <%- include('css/hosDash'); %>
+
+</head>
+
+<body>
+  <div class="navsec">
+    <nav class="navsection">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120" height="90"></label>
+      <ul class="navul">
+         <li class="navli"><a class="active nava" href="/">HOME</a></li>
+            <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+            <li class="navli"><a class="nava" href="/">TRACK</a></li>
+            <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+            <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+            <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <div class="container">
+    <div class="navigation">
+      <span class="head">
+        <h2>Hospital name</h2>
+        <p>Hospital Email</p>
+      </span>
+
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon hoverWhite"><i class="fa-solid fa-user-doctor"></i></i>
+            </span>
+            <span class="title">Appointments</span>
+          </a>
+        </li>
+        <li>
+          <a href="/bedAvail">
+            <span class="icon hoverWhite"><i class="fa-solid fa-bed"></i></span>
+            <span class="title">Beds Available</span>
+          </a>
+        </li>
+        <li>
+          <a href="/bloodAvail">
+            <span class="icon hoverWhite"><i class="fa-solid fa-droplet"></i></span>
+            <span class="title">Blood Bank</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon hoverWhite"><i class="fa-solid fa-truck-medical"></i></span>
+            <span class="title">Ambulance</span>
+          </a>
+        </li>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <li>
+          
+          <form id="logout" action="/logout" method="post">
+          
+            <span class="icon hoverWhite" style="margin-top:4%;"><i class="fa-solid fa-right-from-bracket"></i></span>
+            <input class="title"  style="border:none;margin-left: 7%;padding-top:5%;padding-bottom:5%;" type="submit" value="Logout">
+          
+        </form>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="id1">
+        <span class="icon1"><i style="color: white;" id="icon1" class="fa-solid fa-id-card"></i></span>
+        <span class="idtxt">Hospital Id : JM12345</span>
+        <h1>Appointment Requests</h1>
+      </div>
+
+      <div class="appointment">
+
+
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Patient Name</h4>
+          <p>Disease: Typhoid</p>
+          <p>Contact :123456</p>
+          <div class="btn">
+            <button class="button button1">Approve</button>
+            <button class="button button2">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer_container">
+      <div class="sec footer_aboutus">
+        <h2>Who are We</h2>
+        <!-- <img src="Frame 15.png" alt=""> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+          minima tenetur nesciunt quidem ab facilis quo!</p>
+        <ul class="footer_sci">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec footer_quicklinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="#">Track</a></li>
+          <li><a href="/joinOurTeam">Join Our Team</a></li>
+          <li><a href="#">Review</a></li>
+        </ul>
+      </div>
+
+      <div class="sec footer_quicklinks">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">Bed Availability</a></li>
+          <li><a href="/DonorHome">Blood Bank</a></li>
+          <li><a href="/bookApp">Book Appointment</a></li>
+          <li><a href="#">24/7 Ambulance</a></li>
+        </ul>
+      </div>
+      <div class="footer_sec_contact">
+        <h2>Contact Us</h2>
+        <ul class="footer_contact_info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+              Jabalpur, Madhya Pradesh 482003</span>
+          </li>
+         
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="tel:+12345678900">098935 56449</a>
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  <div class="footer_copyrightText">
+    <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+  </div>
+
+</body>
+
+</html>

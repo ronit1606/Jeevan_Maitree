@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    
+    
+    
+      <%- include('css/style'); %>
+   
+    <title>Document</title>
+</head>
+<body>
+  <h1 class="beds-heading">  BEDS   <span>AVAILABILITY</span></h1>
+  <div class='hospital-container1'>
+    
+   <% hospitalList.forEach(hospital =>{%>
+         
+          <div class="hospital-inner">
+               <i class="fa-solid fa-bed-pulse"></i>
+               <h3><%=hospital.hname%></h3>
+               <p>
+                <div class="table">
+                <table>
+                    <tr>
+                      <th>Beds</th>
+                      <th>Total</th>
+                      <th>Occupied</th>
+                      <th>Available</th>
+                    </tr>
+                    <tr>
+                      <td>General Beds</td>
+                      <td id="general_total1">
+                          <%=hospital.gen_tot%>
+                      </td>
+                      <td id="general_total2">
+                          <%=hospital.gen_occ%>
+                      </td>
+                      <td id="general_total3">
+                          <%=hospital.gen_tot-hospital.gen_occ %>
+                      </td>
+
+                      
+                  </tr>
+                  <tr>
+                      <td>Oxygen Beds</td>
+                      <td id="general_total4">
+                          <%= hospital.oxy_tot%>
+                      </td>
+                      <td id="general_total5">
+                          <%= hospital.oxy_occ%>
+                      </td>
+                      <td id="general_total6">
+                          <%= hospital.oxy_tot-hospital.oxy_occ%>
+                      </td>
+
+                      
+                  </tr>
+                  <tr>
+                    <td>ICU Beds without Ventilator</td>
+                    <td id="general_total7">
+                        <%=hospital.
+                        icu_without_tot%>
+                    </td>
+                    <td id="general_total8">
+                        <%=hospital.
+                        icu_without_occ%>
+                    </td>
+                    <td id="general_total9">
+                        <%=hospital.
+                        icu_without_tot-hospital.
+                        icu_without_occ%>
+                    </td>
+
+                    
+                </tr>
+                <tr>
+                    <td>ICU Beds with Ventilator</td>
+                    <td id="general_total10">
+                        <%=hospital.
+                        icu_without_tot%>
+                    </td>
+                    <td id="general_total11">
+                        <%=hospital.
+                        icu_without_occ%>
+                    </td>
+                    <td id="general_total12">
+                        <%=hospital.
+                        icu_without_tot-hospital.
+                        icu_without_occ%>
+                    </td>
+
+                    
+                </tr>
+                  </table>
+                </div>
+            </p>
+          </div>
+          <script>
+            function counter1(){ 
+            
+            var arr = [<%=hospital.generalbedstotal %>,<%=hospital.generalbedsoccupied %>,<%=hospital.generalbedstotal - hospital.generalbedsoccupied %>,<%= hospital.oxygenbedstotal %>,<%= hospital.oxygenbedsoccupied %>,<%= hospital.oxygenbedstotal - hospital.oxygenbedsoccupied %>,<%=hospital.icubedswithoutventilatortotal %>,<%=hospital.icubedswithoutventilatoroccupied %>,<%=hospital.icubedswithoutventilatortotal - hospital.icubedswithoutventilatoroccupied %>,<%=hospital.icubedswithventilatortotal %>,<%=hospital.icubedswithventilatoroccupied %>,<%=hospital.icubedswithventilatortotal - hospital.icubedswithventilatoroccupied %>]
+            
+            for (let i = 1; i <= 12; i++) {
+                
+                let count = document.getElementById('general_total' + i);
+                counter(count, arr[i - 1]);
+                console.log(arr,count);
+                
+            }
+            function counter(count, arr) {
+
+                let counts = setInterval(updated, 10);
+                let c = 0;
+                function updated() {
+                    count.innerHTML = ++c;
+                    let a = arr
+                    if (c === (a)) {
+                        clearInterval(counts);
+                    }
+                }
+            }
+
+
+            }
+           
+
+
+
+        </script>
+          
+                  
+        
+         
+        
+        
+     
+        
+        
+        <%})%>
+      </div>
+        
+       
+
+</body>
+
+</html>

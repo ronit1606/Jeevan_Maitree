@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://kit.fontawesome.com/ace75cb71d.js" crossorigin="anonymous"></script>
+    <title>Patient Dashboard</title>
+    <%- include('css/patientDash'); %>
+
+</head>
+<body>
+    <div class="navsec">
+        <nav class="navsection">
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120" height="90"></label>
+          <ul class="navul">
+            <li class="navli"><a class="active nava" href="/">HOME</a></li>
+            <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+            <li class="navli"><a class="nava" href="/">TRACK</a></li>
+            <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+            <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+            <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+          </ul>
+        </nav>
+      
+      </div>
+      
+
+
+
+    <div class="patientdashboard">
+
+            <div class="dashboardselection">
+                    <div class="img_name_div">
+                        <div id="image_div_border" >
+                           <img src="images\man2.jpg" width="70" height="70">
+                        </div>
+                        
+                        <div class="patient_details">
+                            <h3 >Your Name</h3>
+                            <p>samosa@chutney.com<p>
+                        </div>
+                       
+
+                    </div>
+                    
+                    <h3 class="dashboardbuttons">
+                        <i class="fa-brands fa-searchengin"></i>
+                        Overview</h3>
+                    <h3 class="dashboardbuttons"><i class="fa-solid fa-file-lines"></i>History</h3>
+                    <h3 class="dashboardbuttons"><i class="fa-solid fa-file-medical"></i>Prescriptions</h3>
+                
+                    <h3 class="dashboardbuttons"><i class="fa-solid fa-microscope"></i>Tests</h3>
+                    
+                    <h3 class="dashboardbuttons" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</h3>
+                </div>
+                <div class="dashboard_part1">
+                    <div class="dashboard_content1">
+                        
+                        <h3>ID: JM225556</h3>
+                       
+                        <button ><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                    </div>
+                    <div class="dashboard_content2">
+                        <div class="dashboard_content2_1">
+                            <div class="inner_content1">
+                                <h3>
+                                    Your doctor
+                                </h3>
+                                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>change</a>
+                           </div> 
+                           <div class="inner_content2_1">
+                           
+                                <img src="images\man1.jpg" width="50"height="50">
+                            <h3>Dr Dhokla<br><p>physicist</p> </h3>
+                            
+                            
+                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                           
+                           </div> 
+                        </div>
+                        <div class="dashboard_content2_2">
+                           <div class="inner_content1">
+                                <h3>
+                                    Your data
+                                </h3>
+                                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>change</a>
+                                
+                           </div> 
+                           <div class="inner_content2">
+                            <h3><p>Gender</p><br>Female </h3>
+                            <h3><p>Age</p><br> 40</h3>
+                            <h3><p>Height</p><br> 5'3</h3>
+                            <h3><p>Weight</p><br> 64kg</h3>
+                            <h3><p>Blood Group</p><br> B+</h3>
+                           </div>    
+                        </div>
+                       
+                        
+                        
+
+
+                        
+                    </div>
+                    <div class="dashboard_content3">
+                        <div class="dash_con_3_1">
+                                <h3 style="font-size: 150%; color:white;">VITALS(LAST CHECKUP)</h3>
+                                <div class="content3_vitals">
+                                    <div class="content3_vitals_inner">
+                                        <div class="blood_pressure">
+                                            <h3 >Blood Pressure</h3>
+                                            <div>
+                                                <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                                                <h4>140</h4>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="Pulse">
+                                            <h3 style="margin-bottom:25% ;">Pulse</h3>
+                                            <div>
+                                                <i class="fa fa-tint" aria-hidden="true"></i> 
+                                                <h4>40</h4>                 
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                       
+                                        
+                                </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 150%;color:white;">PATIENT'S LOGS</h3>
+                            <div class="content3_logs">
+                                <canvas id="myChart" width="500" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+           
+               
+    </div>
+
+
+    <footer>
+        <div class="footer_container">
+          <div class="sec footer_aboutus">
+            <h2>Who are We</h2>
+            <!-- <img src="Frame 15.png" alt=""> -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+              minima tenetur nesciunt quidem ab facilis quo!</p>
+            <ul class="footer_sci">
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+          </div>
+          <div class="sec footer_quicklinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">Services</a></li>
+              <li><a href="#">Track</a></li>
+              <li><a href="/joinOurTeam">Join Our Team</a></li>
+              <li><a href="#">Review</a></li>
+            </ul>
+          </div>
+    
+          <div class="sec footer_quicklinks">
+            <h2>Services</h2>
+            <ul>
+              <li><a href="#">Bed Availability</a></li>
+              <li><a href="/DonorHome">Blood Bank</a></li>
+              <li><a href="/bookApp">Book Appointment</a></li>
+              <li><a href="#">24/7 Ambulance</a></li>
+            </ul>
+          </div>
+          <div class="footer_sec_contact">
+            <h2>Contact Us</h2>
+            <ul class="footer_contact_info">
+              <li>
+                <span><i class="fa-solid fa-location-dot"></i></span>
+                <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+                  Jabalpur, Madhya Pradesh 482003</span>
+              </li>
+    
+              <li>
+                <span><i class="fa-solid fa-phone"></i></span>
+                <p><a href="tel:+12345678900">098935 56449</a>
+                </p>
+              </li>
+    
+              <li>
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+              </li>
+            </ul>
+          </div>
+    
+        </div>
+      </footer>
+      <div class="footer_copyrightText">
+        <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+      </div>
+
+
+</body>
+<script>
+    var ctx = document.getElementById("myChart");
+   
+    
+ var myChart = new Chart(ctx, {
+ type: 'line',
+ backgoundColor:"red",
+ color:"black",
+
+ data: {
+ labels: ["2018", "2019" , "2020" , "2021", "2022"],
+ datasets: [
+ { label: 'Blood sugar level',
+ 
+ data: [51,145,100,120,150],
+ backgroundColor :'rgba(255, 255, 255, 0)',
+ borderColor:"red",
+
+
+ }
+ ],
+ },
+ options: {
+    
+      legend: {
+        labels: {
+          fontColor: "black", 
+          fontSize: 12,
+          
+          
+        }
+      },
+      title: {
+        display: true,
+        position: 'top',
+        text: 'Blood Sugar Graph',
+        fontSize: 20
+    },
+    
+ scales: {
+    yAxes: [{ticks: {fontSize: 12, fontFamily: "'Roboto', sans-serif", fontColor: '#000', fontStyle: '500'}}],
+                            xAxes: [{ticks: {fontSize: 12, fontFamily: "'Roboto', sans-serif", fontColor: '#000', fontStyle: '500'}}]
+ }
+ },
+ });
+
+</script>
+</html>

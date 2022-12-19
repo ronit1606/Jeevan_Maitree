@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <%- include('css/bookApp'); %>
+
+
+</head>
+
+<body >
+ 
+   
+
+        <!---header section starts-->
+      <!-- <nav class="upper-nav">
+    
+        </nav> -->
+        
+        <div class="navsec">
+            <nav class="navsection">
+              <input type="checkbox" id="check">
+              <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+              </label>
+              <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120" height="90"></label>
+              <ul class="navul">
+                <li class="navli"><a class="active nava" href="/">HOME</a></li>
+                <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+                <li class="navli"><a class="nava" href="/">TRACK</a></li>
+                <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+                <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+                <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+              </ul>
+            </nav>
+        
+      
+          <!---header section ends-->
+        
+    <section class="donarreg">
+        <div class="container">
+            <div class="title">Appointment Form</div>
+            <form action="/bookApp" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name <font color="red">*</font></span>
+                        <input type="text" name="fname" placeholder="Enter first name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Middle Name</span>
+                        <input type="text" name="mname" placeholder="Enter middle name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" name="lname" placeholder="Enter last name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date Of Birth <font color="red">*</font></span>
+                        <input id="txtbirthdate" name="dob" class=" form-control" type="date" name="txtbirthdate" maxlength="10" placeholder="MM/DD/YYYY" onkeyup="getAgeVal(0)" onblur="getAgeVal(0);" required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Age</span>
+                        <input type="text" name="age" id="txtage" autocomplete="off" disabled>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile <font color="red">*</font></span>
+                        <input type="text" name="mob" placeholder="Enter mobile no." id="txtPhoneNo" minlength="10" maxlength="10" onkeypress="return isNumber(event)" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email <font color="red">*</font></span>
+                        <input type="email" name="email" placeholder="Enter email " pattern=".+@.+.com" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">State <font color="red">*</font></span>
+                        <select name="state" id="countySel" size="1" required>
+                            <option value="Select State" selected="selected">---Select State---</option>
+                            <!-- <option value="Select State" >Madhya Pradesh</option> -->
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">District <font color="red">*</font></span>
+                        <select name="district" id="stateSel" required>
+                            <option value="Select District" selected="selected">---Select District---</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" name="address">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">PinCode <font color="red">*</font></span>
+                        <input type="number" placeholder="Enter PinCode" name="pincode" id="txtPINCode" required>
+                        <span id="lblPINCode" class="error">Invalid Pin Code, Enter 6 Digit PINCODE </span>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date Of Appointment <font color="red">*</font></span>
+                        <input id="txtbirthdate" class=" form-control" type="date" name="dtofapp" maxlength="10" placeholder="MM/DD/YYYY" required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Hospital <font color="red">*</font></span>
+                        <select name="hosp" id="districtSel" size="1" required>
+                            <option value="Blood Bank" selected="selected">---Select Hospital---</option>
+                            <!-- <option value="Blood Bank" >Bansal</option> -->
+                        </select>
+                    </div>
+                    <!-- <div class="input-box">
+                        <span class="details">Symptoms <font color="red">*</font></span>
+                        <select name="state" id="stateSel" size="1" required>
+                            <option value="Select State" selected="selected">---Select Symptoms---</option>
+                            <option value="Select State" >Madhya Pradesh</option>
+                        </select>
+                    </div> -->
+                    <div class="input-box">
+                        <span class="details">Doctor <font color="red">*</font></span>
+                        <select name="dr" id="stateSel" size="1" required>
+                            <option value="Select State" selected="selected">---Select Doctor---</option>
+                            <option value="Select State" >Madhya Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Under Treatment from Specific Doctor? <font color="red">*</font></span>
+                        <select name="undertreatdr" id="" required>
+                            <option value="select" selected=""selected>---Select---</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="gen" id="dot-1" value="Male">
+                    <input type="radio" name="gen" id="dot-2" value="Female">
+                    <input type="radio" name="gen" id="dot-3" value="Other">
+                    <input type="radio" name="gen" id="dot-4" value="Prefer Not to Say">
+                    <span class="gender-title">Gender <font color="red">*</font></span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Other</span>
+                        </label>
+                        <label for="dot-4">
+                            <span class="dot four"></span>
+                            <span class="gender">Prefer Not to Say</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5" style="font-size: 1.2rem;">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required>
+                    <label class="form-check-label" for="form2Example3">
+                     <a href="">I agree that my above mention details are Correct</a> 
+                    </label>
+                  </div>
+
+                  <div class="button" id="btn" onclick="btn">
+                    <input type="submit" value="Login">
+                  </div>
+            </form>
+        </div>
+    </section>
+    <!---footer section starts-->
+  <footer>
+    <div class="footer_container">
+      <div class="sec footer_aboutus">
+        <h2>Who are We</h2>
+        <!-- <img src="Frame 15.png" alt=""> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+          minima tenetur nesciunt quidem ab facilis quo!</p>
+        <ul class="footer_sci">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec footer_quicklinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="#">Track</a></li>
+          <li><a href="/joinOurTeam">Join Our Team</a></li>
+          <li><a href="#">Review</a></li>
+        </ul>
+      </div>
+
+      <div class="sec footer_quicklinks">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">Bed Availability</a></li>
+          <li><a href="/DonorHome">Blood Bank</a></li>
+          <li><a href="/bookApp">Book Appointment</a></li>
+          <li><a href="#">24/7 Ambulance</a></li>
+        </ul>
+      </div>
+      <div class="footer_sec_contact">
+        <h2>Contact Us</h2>
+        <ul class="footer_contact_info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+              Jabalpur, Madhya Pradesh 482003</span>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="tel:+12345678900">098935 56449</a>
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  <div class="footer_copyrightText">
+    <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+  </div>
+  <!---footer section ends-->
+
+
+
+
+<!-- JS -->
+    <script type="text/javascript">
+        function formatDate(date){
+        var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+        
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+        
+        return [year, month, day].join('-');
+        
+        }
+        
+        function getAge(dateString){
+        var birthdate = new Date().getTime();
+        if (typeof dateString === 'undefined' || dateString === null || (String(dateString) === 'NaN')){
+        // variable is undefined or null value
+        birthdate = new Date().getTime();
+        }
+        birthdate = new Date(dateString).getTime();
+        var now = new Date().getTime();
+        // now find the difference between now and the birthdate
+        var n = (now - birthdate)/1000;
+        if (n < 604800){ // less than a week
+        var day_n = Math.floor(n/86400);
+        if (typeof day_n === 'undefined' || day_n === null || (String(day_n) === 'NaN')){
+        // variable is undefined or null
+        return '';
+        }else{
+        return day_n + ' day' + (day_n > 1 ? 's' : '') + ' old';
+        }
+        } else if (n < 2629743){ // less than a month
+        var week_n = Math.floor(n/604800);
+        if (typeof week_n === 'undefined' || week_n === null || (String(week_n) === 'NaN')){
+        return '';
+        }else{
+        return week_n + ' week' + (week_n > 1 ? 's' : '') + ' old';
+        }
+        } else if (n < 31562417){ // less than 24 months
+        var month_n = Math.floor(n/2629743);
+        if (typeof month_n === 'undefined' || month_n === null || (String(month_n) === 'NaN')){
+        return '';
+        }else{
+        return month_n + ' month' + (month_n > 1 ? 's' : '') + ' old';
+        }
+        }else{
+        var year_n = Math.floor(n/31556926);
+        if (typeof year_n === 'undefined' || year_n === null || (String(year_n) === 'NaN')){
+        return year_n = '';
+        }else{
+        return year_n + ' year' + (year_n > 1 ? 's' : '') + ' old';
+        }
+        }
+        }
+        
+        function getAgeVal(pid){
+        var birthdate = formatDate(document.getElementById("txtbirthdate").value);
+        var count = document.getElementById("txtbirthdate").value.length;
+        if (count=='10'){
+        var age = getAge(birthdate);
+        var str = age;
+        var res = str.substring(0, 1);
+        if (res =='-' || res =='0'){
+        document.getElementById("txtbirthdate").value = "";
+        document.getElementById("txtage").value = "";
+        $('#txtbirthdate').focus();
+        return false;
+        }else{
+        document.getElementById("txtage").value = age;
+        }
+        }else{
+        document.getElementById("txtage").value = "";
+        return false;
+        }
+        }
+
+
+
+/*
+        function cap(){
+    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                 ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                 var a = alpha[Math.floor(Math.random()*71)];
+                 var b = alpha[Math.floor(Math.random()*71)];
+                 var c = alpha[Math.floor(Math.random()*71)];
+                 var d = alpha[Math.floor(Math.random()*71)];
+                 var e = alpha[Math.floor(Math.random()*71)];
+                 var f = alpha[Math.floor(Math.random()*71)];
+
+                 var final = a+b+c+d+e+f;
+                 document.getElementById("capt").value=final;
+               }
+               function validcap(){
+                var stg1 = document.getElementById('capt').value;
+                var stg2 = document.getElementById('textinput').value;
+                if(stg1==stg2){
+                  alert("Form is validated Succesfully");
+                  return true;
+                }else{
+                  alert("Please enter a valid captcha");
+                  return false;
+                }
+               }
+
+*/
+
+
+
+var stateObject  = {
+            "Madhya Pradesh":{"Agar Malwa":[],
+                                "Alirajpur": [],
+                                "Anuppur": [],
+                                "Ashoknagar": [],
+                                "Balaghat": [],
+                                "Barwani": [],
+                                "Betul": [],
+                                "Bhind": [],
+                                "Bhopal": [],
+                                "Burhanpur": [],
+                                "Chhatarpur": [],
+                                "Chhindwara": [],
+                                "Damoh": [],
+                                "Datia": [],
+                                "Dewas": [],
+                                "Dhar": [],
+                                "Dindori": [],
+                                "Guna": [],
+                                "Gwalior": [],
+                                "Harda": [],
+                                "Hoshangabad": [],
+                                "Indore": [],
+                                "Jabalpur": {"Chauhan Laser Dental Clinic":["Dr. Sunil S Chahan"]},
+                                "Jhabua": [],
+                                "Katni": [],
+                                "Khandwa (East Nimar)": [],
+                                "Khargone (West Nimar)": [],
+                                "Mandla": [],
+                                "Mandsaur": [],
+                                "Morena": [],
+                                "Narsinghpur": [],
+                                "Neemuch": [],
+                                "Niwari": [],       //nothing found
+                                "Panna": [],
+                                "Raisen": [],
+                                "Rajgarh": [],
+                                "Ratlam": [],
+                                "Rewa": [],
+                                "Sagar": [],
+                                "Satna": [],
+                                "Sehore": [],
+                                "Seoni": [],
+                                "Shahdol": [],
+                                "Shajapur": [],
+                                "Sheopur": [],
+                                "Shivpuri": [],
+                                "Sidhi": [],
+                                "Singrauli": [],
+                                "Tikamgarh": [],
+                                "Ujjain": [],
+                                "Umaria": [],
+                                "Vidisha": []
+
+                            },
+                    }
+
+        window.onload = function () {
+        var countySel = document.getElementById("countySel"),
+        stateSel = document.getElementById("stateSel"),
+        districtSel = document.getElementById("districtSel");
+        for (var country in stateObject) {
+        countySel.options[countySel.options.length] = new Option(country, country);
+        }
+        countySel.onchange = function () {
+        stateSel.length = 1; // remove all options bar first
+        districtSel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) return; // done 
+        for (var state in stateObject[this.value]) {
+        stateSel.options[stateSel.options.length] = new Option(state, state);
+        }
+        }
+        countySel.onchange(); // reset in case page is reloaded
+        stateSel.onchange = function () {
+        districtSel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) return; // done 
+        var district = stateObject[countySel.value][this.value];
+        for (var i = 0; i < district.length; i++) {
+        districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+        }
+        }
+        }
+
+
+
+// phone number validation
+
+        function isNumber(evt) {
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    alert("Please enter only Numbers.");
+    return false;
+  }
+
+  return true;
+}
+
+function ValidateNo() {
+  var phoneNo = document.getElementById('txtPhoneNo');
+
+  if (phoneNo.value == "" || phoneNo.value == null) {
+    alert("Please enter your Mobile No.");
+    return false;
+  }
+  if (phoneNo.value.length < 10 || phoneNo.value.length > 10) {
+    alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
+    return false;
+  }
+
+  alert("Success ");
+  return true;
+}
+
+
+
+// pin code validation
+
+// function ValidatePIN() {
+//         var txtPINCode = document.getElementById("txtPINCode");
+//         var lblPINCode = document.getElementById("lblPINCode")
+//         var regex = /([0-9]){6}$/;
+//         if (regex.test(txtPINCode.value.toUpperCase())) {
+//             lblPINCode.style.visibility = "hidden";
+//             return true;
+//         } else {
+//             lblPINCode.style.visibility = "visible";
+//             return false;
+//         }
+//     }
+
+        </script>
+
+</body>
+</html>

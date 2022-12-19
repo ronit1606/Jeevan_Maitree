@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Camp Registration</title>
+    <!-- <link rel="stylesheet" href="campreg.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        var stateObject  = {
+            "Madhya Pradesh":{"Agar Malwa":["District Hospital Agar Malwa"],
+                                "Alirajpur": ["District Hospital Alirajpur"],
+                                "Anuppur": ["Blood Centre, District Hospital Anuppur"],
+                                "Ashoknagar": ["Ashoknagar Seva Samiti", "Govt District Hospital Blood Centre Ashok Nagar"],
+                                "Balaghat": ["Agrawal Blood & Components Centre run by chirayu Balaghat", "District Hospital, Balaghat", "Faith Blood Centre Balaghat"],
+                                "Barwani": ["District Hospital Barwani"],
+                                "Betul": ["District Hospital Betul", "Padhar Hospital Blood Centre, Betul", "Sewa Blood Centre & Component Centre, Betul"],
+                                "Bhind": ["District Hospital Bhind"],
+                                "Bhopal": ["All India Insitute of Medical Sciences. AIIMS Bhopal", "Arpan Blood Centre", "Avanti Bai Blood Centre", "Bansal Hospital Redefining Health Care, A Unit of Ayushman Medical Diagnostic Pvt Ltd.", "Bhopal Memorial Hospital & Research Centre", "Chirayu Health & Medicare", "Chirayu Medical College & Hospital", "City Blood Centre of Bhojpal Charitable Trust", "Gandhi Medical College, Hamidia Hospital", "Indian Red Cross Society Blood Centre", "Indira Gandhi Mahila Evam Balya Chikitsalaya", "Jawahar Lal Nehru Cancer Hospital & Research Centre", "J.K. Hospital & Medical REsearch Centre", "J P Hospital, Tulsi Nagar", "Karond Blood Centre & Component Centre", "Kasturba Hospital", "Life Saver Blood Centre", "MP State Had Quarter", "Mahaveer Institute of Medical Sciences & Research Mangalwara", "Manas Blood Center & Component Centre", "MP Thelasmia Kid Care Society", "New Bhopal Blood Centre", "Noble Blood Centre & Component Centre", "People Hospital Blood Centre", "Rkdf Medical College Hospital & Research Centre", "Sewa Blood Centre & Component Centre", "Tatpar Blood Centre & Component Centre", "VED HI TECH Charitable Blood Centre", "Vision Blood Centre"],
+                                "Burhanpur": ["All is Well Blood Centre", "Chandubhai Somabhai Patel Blood Centre (Of Arogyaseva Mandal)", "District Hospital, Burhanpur"],
+                                "Chhatarpur": ["Bundelkhand Blood Centre", "District Hospital Chhatarpur"],
+                                "Chhindwara": ["Chindwara Blood Centre", "District Hospital, Chhindwara", "WCL Badkuhi Hospital"],
+                                "Damoh": ["Blood Centre of Christon Medical & Training Centre", "District Hospital, Damoh"],
+                                "Datia": ["District Hospital Datia"],
+                                "Dewas": ["Amaltas Insitute of Medical Sciences", "District Hospital Dewas", "Vishnuprabha Charitable Trust"],
+                                "Dhar": ["District Hospital Dhar", "Mahajan Hospital", "Mittal Hospital Nursing Chopati"],
+                                "Dindori": ["District Hospital Dindori"],
+                                "Guna": ["District Hospital Guna", "Kanchan Medicare & Research Centre Pvt Ltd."],
+                                "Gwalior": ["Birla Insitute of Medical Research", "Blood Centre District Hospital Morar", "Cancer Hospital & Research Centre", "GR Medical College, Ja Hospital", "Indian Red Cross Society Blood Centre, Darba", "Indian Red Cross Society Blood Centre, kampoo", "Parth Blood Centre Component Separation Unit & Apheresis Center", "Shree Blood Centre"],
+                                "Harda": ["District Hospital Harda"],
+                                "Hoshangabad": ["Blood Centre, Jan Seva Rughnalaya, Itarsi", "District Hospital, Hoshangabad", "Harit Blood Centre", "Life Line Blood Centre, Itarsi", "Shreya Blood Centre", "Society of St. Joseph Hospital Blood Centre"],
+                                "Indore": ["Aurobindo Blood Centre Saims Hospital", "Bombay Hospital Trust", "CHL Charitable Trust Blood Centre", "Choitram Hospital & Research Centre", "DNS Blood Centre", "Gokuldas Hospital Blood CEntre Sarju Bai Charitable Trust", "Greater Kailash Hospitals Pvt. Ltd", "Index Medical College Hospital & Research Centre Run by Mayank Welfare Society", "Indian Red Cross Society Blood Bank, Red Cross Hospital, Mhow", "Indian Red Cross Society Blood Centre", "Jupiter Hospital Projects Pvt. Ltd Blood Centre", "Lahoti Medicare Pvt. Ltd", "Modern Blood Centre", "Mohit Blood Centre Services", "M/S Modern Institute of Medical Science & Sewakunj Hospital & Research Centre Blood Bank", "Noble Pathology Labs Blood Centre", "Sanghvi Blood Centre", "Shri Indore Cloth Market Hospital", "Shubham Pathological Diagnostic Centre & Blood Centre", "State of Art Model Blood Centre Mgm Medical College, MY Hospital", "Suyash Blood Centre", "Verma Union Hospital, Blood Centre"],
+                                "Jabalpur": ["Bansal Blood Centre & Transfusion Service", "Care Blood Centre", "Govt Seth Govinddas Victoria Hospital", "Jabalpur Blood Center & Pathology Lab", "Jabalpur Thalesemia Society", "Khanna Pathology Lab & Blood Centre", "Military Hospital Centre", "NSCB Medical College", "Rani Durgavati Chikitsalaya", "Shri Narayan Life Care Blood Centre", "Sukh Sagar Medical College & Hospital"],
+                                "Jhabua": ["District Hospital Jhabua", "Jivan Jyoti Hospital, Meghnagar"],
+                                "Katni": ["District Hospital Katni"],
+                                "Khandwa (East Nimar)": ["Deep Blood Centre", "District Hospital Khandwa"],
+                                "Khargone (West Nimar)": ["District Hospital Khargone", "Subhishi Blood Centre of Rahat Charitable Trust"],
+                                "Mandla": ["District Hospital Mandla"],
+                                "Mandsaur": ["District Hospital Mandsaur", "Jain Pathology Lab & Blood Centre"],
+                                "Morena": ["District Hospital Morena"],
+                                "Narsinghpur": ["District Hospital Narsinghpur"],
+                                "Neemuch": ["District Hospital Neemuch"],
+                                "Niwari": [],       //nothing found
+                                "Panna": [],
+                                "Raisen": ["District Hospital Raisen"],
+                                "Rajgarh": ["District Hospital Rajgarh"],
+                                "Ratlam": ["District Hospital Ratlam", "Manav Seva Samiti"],
+                                "Rewa": ["Blood Centre District Hospital", "S S Medical College, Sanjay Gandhi Memorial Hospital", "Vindhya Blood Centre"],
+                                "Sagar": ["Bhagyoday Tirth Hospital Blood Centre", "City Blood Centre", "District Hospital, Sagar", "Nia Sagar Shree Blood Centre Makronia"],
+                                "Satna": ["District Hospital Satna", "MP Birla Hospital & research Centre Insitute", "Sadgur Blood Centre JAnkikund Chikitsalaya, Chitrakoot"],
+                                "Sehore": ["District Hospital Sehore"],
+                                "Seoni": ["District Hospital Seoni", "Jindal Hospital Diagnostic & Research Centre Blood Centre Seoni"],
+                                "Shahdol": ["District Hospital Shahdol"],
+                                "Shajapur": ["District Hospital Shajapur"],
+                                "Sheopur": ["District Hospital Sheopur"],
+                                "Shivpuri": ["District Hospital Shivpuri"],
+                                "Sidhi": ["District Hospital Sidhi"],
+                                "Singrauli": ["Indian Red Cross Society Blood Centre", "Nehru Janshatabdi Chikitsalaya Blood Centre of M/S Nehru Coal Field, Sohagpur"],
+                                "Tikamgarh": ["District Hospital Tikamgarh"],
+                                "Ujjain": ["CR Gardi Hospital & RD Gardi Medical College","District Hospital Ujjain", "Grassim Hospital & Blood Centre", "Puspha Mission Hospital & Maternity Hospital Blood Centre", "Ujjain Charitable Trust"],
+                                "Umaria": ["District Hospital Umaria"],
+                                "Vidisha": ["District Hospital Vidisha"]
+
+                            },
+                    }
+
+        window.onload = function () {
+        var countySel = document.getElementById("countySel"),
+        stateSel = document.getElementById("stateSel"),
+        districtSel = document.getElementById("districtSel");
+        for (var country in stateObject) {
+        countySel.options[countySel.options.length] = new Option(country, country);
+        }
+        countySel.onchange = function () {
+        stateSel.length = 1; // remove all options bar first
+        districtSel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) return; // done 
+        for (var state in stateObject[this.value]) {
+        stateSel.options[stateSel.options.length] = new Option(state, state);
+        }
+        }
+        countySel.onchange(); // reset in case page is reloaded
+        stateSel.onchange = function () {
+        districtSel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) return; // done 
+        var district = stateObject[countySel.value][this.value];
+        for (var i = 0; i < district.length; i++) {
+        districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+        }
+        }
+        }
+</script>
+<%- include('css/bloodCampReg'); %>
+
+</head>
+<body >
+
+       <!---header section starts-->
+      <!-- <nav class="upper-nav">
+    
+        </nav> -->
+      
+        <div class="navsec">
+            <nav class="navsection">
+              <input type="checkbox" id="check">
+              <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+              </label>
+              <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree" width="120" height="90"></label>
+              <ul class="navul">
+                <li class="navli"><a class="active nava" href="/">HOME</a></li>
+            <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+            <li class="navli"><a class="nava" href="/">TRACK</a></li>
+            <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+            <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+            <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+              </ul>
+            </nav>
+        
+      
+          <!---header section ends-->
+
+          <section class="donarreg">
+            <div class="container">
+                <div class="title">Blood Camp Registration Form</div>
+                <form action="/bloodCampReg" method="post">
+                    <div class="user-details">
+                        
+                        <div class="input-box">
+                            <span class="details">Management Type <font color="red">*</font></span>
+                            <select type="text" name="mantype" placeholder="Management Type" required>
+                                <option value="Management Type" selected="selected">---Select Type---</option>
+                                <option value="Management Type" >Red Cross</option>
+                                <option value="Management Type" >RWA</option>
+                                <option value="Management Type" >Sewa he Sangathan - Health Volunteers</option>
+                                <option value="Management Type" >Terapanth Yuvak Parishad</option>
+                                <option value="Management Type" >Others</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Management Name <font color="red">*</font></span>
+                            <input type="text"  name="manname" placeholder="Management Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Management Mobile No. <font color="red">*</font></span>
+                            <input type="number" name="manmn" maxlength="10" minlength="10" placeholder="Management Mobile No." required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Management Email <font color="red"></font></span><!---*-->
+                            <input type="email" name="manemail" placeholder="Management Email" pattern=".+@.+.com" size="30" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Camp Name <font color="red">*</font></span>
+                            <input type="text" name="campname" placeholder="Camp Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Camp Address <font color="red">*</font></span>
+                            <input type="text" name="campadd" placeholder="Camp Address" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">State <font color="red">*</font></span>
+                            <select name="state" id="countySel" size="1" required>
+                                <option value="Select State" selected="selected">---Select State---</option>
+                                <!-- <option value="Select State" >Madhya Pradesh</option> -->
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">District <font color="red">*</font></span>
+                            <select name="district" id="stateSel" required>
+                                <option value="Select District" selected="selected">---Select District---</option>
+                                <!-- <option value="Select District" >Agar Malwa</option> -->
+                                <!-- <option value="Select District" >Alirajpur</option> -->
+                                <!-- <option value="Select District" >Anuppur</option> -->
+                                <!-- <option value="Select District" >Ashoknagar</option> -->
+                                <!-- <option value="Select District" >Balaghat</option> -->
+                                <!-- <option value="Select District" >Barwani</option> -->
+                                <!-- <option value="Select District" >Betul</option> -->
+                                <!-- <option value="Select District" >Bhind</option> -->
+                                <!-- <option value="Select District" >Bhopal</option> -->
+                                <!-- <option value="Select District" >Burhanpur</option> -->
+                                <!-- <option value="Select District" >Chhatarpur</option> -->
+                                <!-- <option value="Select District" >Chhindwara</option> -->
+                                <!-- <option value="Select District" >Damoh</option> -->
+                                <!-- <option value="Select District" >Datia</option> -->
+                                <!-- <option value="Select District" >Dewas</option> -->
+                                <!-- <option value="Select District" >Dhar</option> -->
+                                <!-- <option value="Select District" >Dindori</option> -->
+                                <!-- <option value="Select District" >Guna</option> -->
+                                <!-- <option value="Select District" >Gwalior</option> -->
+                                <!-- <option value="Select District" >Harda</option> -->
+                                <!-- <option value="Select District" >Hoshangabad</option> -->
+                                <!-- <option value="Select District" >Indore</option> -->
+                                <!-- <option value="Select District" >Jabalpur</option> -->
+                                <!-- <option value="Select District" >Jhabua</option> -->
+                                <!-- <option value="Select District" >Katni</option> -->
+                                <!-- <option value="Select District" >Khandwa</option> -->
+                                <!-- <option value="Select District" >Khargone</option> -->
+                                <!-- <option value="Select District" >Mandla</option> -->
+                                <!-- <option value="Select District" >Mandsaur</option> -->
+                                <!-- <option value="Select District" >Morena</option> -->
+                                <!-- <option value="Select District" >Narsinghpur</option> -->
+                                <!-- <option value="Select District" >Neemuch</option> -->
+                                <!-- <option value="Select District" >Panna</option> -->
+                                <!-- <option value="Select District" >Raisen</option> -->
+                                <!-- <option value="Select District" >Rajgarh</option> -->
+                                <!-- <option value="Select District" >Ratlam</option> -->
+                                <!-- <option value="Select District" >Rewa</option> -->
+                                <!-- <option value="Select District" >Sagar</option> -->
+                                <!-- <option value="Select District" >Satna</option> -->
+                                <!-- <option value="Select District" >Sehore</option> -->
+                                <!-- <option value="Select District" >Seoni</option> -->
+                                <!-- <option value="Select District" >Shahdol</option> -->
+                                <!-- <option value="Select District" >Shajapur</option> -->
+                                <!-- <option value="Select District" >Sheopur</option> -->
+                                <!-- <option value="Select District" >Shivpuri</option> -->
+                                <!-- <option value="Select District" >Sidhi</option> -->
+                                <!-- <option value="Select District" >Singrauli</option> -->
+                                <!-- <option value="Select District" >Tikamgarh</option> -->
+                                <!-- <option value="Select District" >Ujjain</option> -->
+                                <!-- <option value="Select District" >Umaria</option> -->
+                                <!-- <option value="Select District" >Vidisha</option> -->
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Blood Bank <font color="red">*</font></span>
+                            <select name="bloodbank" id="districtSel" size="1" required>
+                                <option value="Blood Bank" selected="selected">---Blood Bank---</option>
+                                <!-- <option value="Blood Bank" >Bansal</option> -->
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Camp Date <font color="red">*</font></span>
+                            <input id="txtbirthdate" name="campdt" class=" form-control" type="date" name="txtbirthdate" maxlength="10" placeholder="MM/DD/YYYY" required> 
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Start Time <font color="red">*</font></span>
+                            <input type="time" name="strttym" placeholder="Start Time "  required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">End Time <font color="red">*</font></span>
+                            <input type="time" name="endtym" placeholder="End Time "  required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Latitude (optional) </span>
+                            <input type="number" name="lat" placeholder="Latitude" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Longitude (optional) </span>
+                            <input type="number" name="long" placeholder="Longitude" >
+                        </div>
+                        
+                        
+                    </div>
+                    
+    
+                    
+    
+                    <div class="form-check d-flex justify-content-center mb-5" style="font-size: 1.2rem;">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required>
+                        <label class="form-check-label" for="form2Example3">
+                            I accept all the  <a href="">terms & conditions</a> 
+                        </label>
+                    </div>
+    
+                    <div class="button" id="btn" onclick="btn">
+                      <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+      <!---footer section starts-->
+  <footer>
+    <div class="footer_container">
+      <div class="sec footer_aboutus">
+        <h2>Who are We</h2>
+        <!-- <img src="Frame 15.png" alt=""> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam praesentium
+          minima tenetur nesciunt quidem ab facilis quo!</p>
+        <ul class="footer_sci">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <div class="sec footer_quicklinks">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="#">Track</a></li>
+          <li><a href="/joinOurTeam">Join Our Team</a></li>
+          <li><a href="#">Review</a></li>
+        </ul>
+      </div>
+
+      <div class="sec footer_quicklinks">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">Bed Availability</a></li>
+          <li><a href="/DonorHome">Blood Bank</a></li>
+          <li><a href="/bookApp">Book Appointment</a></li>
+          <li><a href="#">24/7 Ambulance</a></li>
+        </ul>
+      </div>
+      <div class="footer_sec_contact">
+        <h2>Contact Us</h2>
+        <ul class="footer_contact_info">
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+              Jabalpur, Madhya Pradesh 482003</span>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <p><a href="tel:+12345678900">098935 56449</a>
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+  <div class="footer_copyrightText">
+    <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+  </div>
+  <!---footer section ends-->
+  
+    <script>
+        var select = document.querySelector('#stateSel');
+    </script>
+
+
+
+
+</body>
+</html>

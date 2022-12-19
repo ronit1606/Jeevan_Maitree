@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Availability</title>
+</head>
+<%- include('css/bedAvail'); %>
+
+    <body>
+        <table>
+            <tr>
+                <td>
+                    
+                        
+                            <form method="post" action="/hospitalbeds/<%= hospital._id %>" autocomplete="off"
+                                onsubmit="onFormSubmit()">
+                                <div>
+                                    <label for="Beds">Bed Category</label>
+                                    <input type="Text" name="Beds" id="Beds">
+                                </div>
+                                <div>
+                                    <label for="totalBeds">Total Beds</label>
+                                    <input type="number" name="totalBeds" id="totalBeds">
+                                </div>
+                                <div>
+                                    <label for="occu">Occupied Beds </label>
+                                    <input type="number" name="occu" id="occu">
+                                </div>
+                                <div>
+                                    <label for="available">Available Beds</label>
+                                    <input type="number" name="available" id="available">
+                                </div>
+
+                                <div class="form_action--button">
+                                    <input type="submit" value="Submit">
+                                    <input type="reset" value="Reset">
+                                </div>
+                            </form>
+
+
+                <td>
+                    <table class="list" id="storeList">
+                        <thead>
+                            <tr>
+                                <th>Beds</th>
+                                <th>Total Beds</th>
+                                <th>Occupied </th>
+                                <th>Available </th>
+                            </tr>
+                            <tr>
+                                <td>General Beds</td>
+                                <td id="general_total1">
+                                    <%=hospital.gen_tot%>
+                                </td>
+                                <td id="general_total2">
+                                    <%=hospital.gen_occ%>
+                                </td>
+                                <td id="general_total3">
+                                    <%=hospital.gen_tot-hospital.gen_occ %>
+                                </td>
+
+                                <td><button onClick="onEdit(this)">Edit</button> </td>
+                            </tr>
+                            <tr>
+                                <td>Oxygen Beds</td>
+                                <td id="general_total4">
+                                    <%= hospital.
+                                    oxy_tot%>
+                                </td>
+                                <td id="general_total5">
+                                    <%= hospital.
+                                    oxy_occ%>
+                                </td>
+                                <td id="general_total6">
+                                    <%= hospital.
+                                    oxy_tot-hospital.
+                                    oxy_occ%>
+                                </td>
+
+                                <td><button onClick="onEdit(this)">Edit</button> </td>
+                            </tr>
+                            <tr>
+                                <td>ICU Beds without Ventilator</td>
+                                <td id="general_total7">
+                                    <%=hospital.
+                                    icu_without_tot%>
+                                </td>
+                                <td id="general_total8">
+                                    <%=hospital.
+                                    icu_without_occ%>
+                                </td>
+                                <td id="general_total9">
+                                    <%=hospital.
+                                    icu_without_tot-hospital.
+                                    icu_without_occ%>
+                                </td>
+
+                                <td><button onClick="onEdit(this)">Edit</button> </td>
+                            </tr>
+                            <tr>
+                                <td>ICU Beds with Ventilator</td>
+                                <td id="general_total10">
+                                    <%=hospital.icu_with_tot%>
+                                </td>
+                                <td id="general_total11">
+                                    <%=hospital.icu_with_occ%>
+                                </td>
+                                <td id="general_total12">
+                                    <%=hospital.icu_with_tot-hospital.icu_with_occ%>
+                                </td>
+
+                                <td><button onClick="onEdit(this)">Edit</button> </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+                <script>
+                    let arr = [<%=hospital.gen_tot %>,<%=hospital.gen_occ %>,<%=hospital.gen_tot - hospital.gen_occ %>,<%= hospital.oxy_tot %>,<%= hospital.oxy_occ %>,<%= hospital.oxy_tot - hospital.oxy_occ %>,<%=hospital.icu_without_tot %>,<%=hospital.icu_without_occ %>,<%=hospital.icu_without_tot - hospital.icu_without_occ %>,<%=hospital.icu_with_tot %>,<%=hospital.icu_with_occ %>,<%=hospital.icu_with_tot - hospital.icu_with_occ %>]
+
+                    for (let i = 1; i <= 12; i++) {
+                        let count = document.getElementById('general_total' + i);
+                        counter(count, arr[i - 1]);
+                    }
+                    function counter(count, arr) {
+
+                        let counts = setInterval(updated, 10);
+                        let c = 0;
+                        function updated() {
+                            if(arr==0){
+                                count.innerHTML=arr;
+                            }
+                            else{
+                                count.innerHTML = ++c;
+                            let a = arr
+                            if (c === (a)) {
+                                clearInterval(counts);
+                            }
+                            }
+                           
+                        }
+                    }
+
+
+
+
+
+
+
+                </script>
+               
+                    
+
+                        </td>
+            </tr>
+        </table>
+    </body>
+    
+    <script>
+        function onEdit(td) {
+            selectedRow = td.parentElement.parentElement;
+            document.getElementById("Beds").value = selectedRow.cells[0].innerHTML;
+            document.getElementById("totalBeds").value = selectedRow.cells[1].innerHTML;
+            document.getElementById("occu").value = selectedRow.cells[2].innerHTML;
+            document.getElementById("available").value = selectedRow.cells[3].innerHTML;
+        }
+        
+        </script>
+</html>

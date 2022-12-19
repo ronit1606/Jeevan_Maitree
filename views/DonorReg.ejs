@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donar Registration</title>
+    <!-- <link rel="stylesheet" href="donarreg.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="text/javascript">
+        function formatDate(date){
+        var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+        
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+        
+        return [year, month, day].join('-');
+        
+        }
+        
+        function getAge(dateString){
+        var birthdate = new Date().getTime();
+        if (typeof dateString === 'undefined' || dateString === null || (String(dateString) === 'NaN')){
+        // variable is undefined or null value
+        birthdate = new Date().getTime();
+        }
+        birthdate = new Date(dateString).getTime();
+        var now = new Date().getTime();
+        // now find the difference between now and the birthdate
+        var n = (now - birthdate)/1000;
+        if (n < 604800){ // less than a week
+        var day_n = Math.floor(n/86400);
+        if (typeof day_n === 'undefined' || day_n === null || (String(day_n) === 'NaN')){
+        // variable is undefined or null
+        return '';
+        }else{
+        return day_n + ' day' + (day_n > 1 ? 's' : '') + ' old';
+        }
+        } else if (n < 2629743){ // less than a month
+        var week_n = Math.floor(n/604800);
+        if (typeof week_n === 'undefined' || week_n === null || (String(week_n) === 'NaN')){
+        return '';
+        }else{
+        return week_n + ' week' + (week_n > 1 ? 's' : '') + ' old';
+        }
+        } else if (n < 31562417){ // less than 24 months
+        var month_n = Math.floor(n/2629743);
+        if (typeof month_n === 'undefined' || month_n === null || (String(month_n) === 'NaN')){
+        return '';
+        }else{
+        return month_n + ' month' + (month_n > 1 ? 's' : '') + ' old';
+        }
+        }else{
+        var year_n = Math.floor(n/31556926);
+        if (typeof year_n === 'undefined' || year_n === null || (String(year_n) === 'NaN')){
+        return year_n = '';
+        }else{
+        return year_n + ' year' + (year_n > 1 ? 's' : '') + ' old';
+        }
+        }
+        }
+        
+        function getAgeVal(pid){
+        var birthdate = formatDate(document.getElementById("txtbirthdate").value);
+        var count = document.getElementById("txtbirthdate").value.length;
+        if (count=='10'){
+        var age = getAge(birthdate);
+        var str = age;
+        var res = str.substring(0, 1);
+        if (res =='-' || res =='0'){
+        document.getElementById("txtbirthdate").value = "";
+        document.getElementById("txtage").value = "";
+        $('#txtbirthdate').focus();
+        return false;
+        }else{
+        document.getElementById("txtage").value = age;
+        }
+        }else{
+        document.getElementById("txtage").value = "";
+        return false;
+        }
+        }
+
+
+
+/*
+        function cap(){
+    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                 ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                 var a = alpha[Math.floor(Math.random()*71)];
+                 var b = alpha[Math.floor(Math.random()*71)];
+                 var c = alpha[Math.floor(Math.random()*71)];
+                 var d = alpha[Math.floor(Math.random()*71)];
+                 var e = alpha[Math.floor(Math.random()*71)];
+                 var f = alpha[Math.floor(Math.random()*71)];
+
+                 var final = a+b+c+d+e+f;
+                 document.getElementById("capt").value=final;
+               }
+               function validcap(){
+                var stg1 = document.getElementById('capt').value;
+                var stg2 = document.getElementById('textinput').value;
+                if(stg1==stg2){
+                  alert("Form is validated Succesfully");
+                  return true;
+                }else{
+                  alert("Please enter a valid captcha");
+                  return false;
+                }
+               }
+
+*/
+        </script>
+
+<%- include('css/DonorReg'); %>
+
+
+</head>
+<body class="donarregbody">
+    <section class="donarreg">
+        <div class="container">
+            <div class="title">Blood Donar Registration Form</div>
+            <form action="/DonorReg" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name <font color="red">*</font></span>
+                        <input type="text" name="fname" placeholder="Enter first name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Middle Name</span>
+                        <input type="text" name="mname" placeholder="Enter middle name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" name="lname" placeholder="Enter last name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date Of Birth <font color="red">*</font></span>
+                        <input id="txtbirthdate" name="dob" class=" form-control" type="date" name="txtbirthdate" maxlength="10" placeholder="MM/DD/YYYY" onkeyup="getAgeVal(0)" onblur="getAgeVal(0);" required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Age</span>
+                        <input type="text" name="age" id="txtage" autocomplete="off" disabled>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile <font color="red">*</font></span>
+                        <input type="text" name="mob" placeholder="Enter mobile no." minlength="10" maxlength="10" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">State <font color="red">*</font></span>
+                        <select name="state" id="stateSel" size="1" required>
+                            <option value="Select State" selected="selected">---Select State---</option>
+                            <option value="Select State" >Madhya Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">District <font color="red">*</font></span>
+                        <select name="district" id="districtSel" required>
+                            <option value="Select District" selected="selected">---Select District---</option>
+                            <option value="Select District" >Agar Malwa</option>
+                            <option value="Select District" >Alirajpur</option>
+                            <option value="Select District" >Anuppur</option>
+                            <option value="Select District" >Ashoknagar</option>
+                            <option value="Select District" >Balaghat</option>
+                            <option value="Select District" >Barwani</option>
+                            <option value="Select District" >Betul</option>
+                            <option value="Select District" >Bhind</option>
+                            <option value="Select District" >Bhopal</option>
+                            <option value="Select District" >Burhanpur</option>
+                            <option value="Select District" >Chhatarpur</option>
+                            <option value="Select District" >Chhindwara</option>
+                            <option value="Select District" >Damoh</option>
+                            <option value="Select District" >Datia</option>
+                            <option value="Select District" >Dewas</option>
+                            <option value="Select District" >Dhar</option>
+                            <option value="Select District" >Dindori</option>
+                            <option value="Select District" >Guna</option>
+                            <option value="Select District" >Gwalior</option>
+                            <option value="Select District" >Harda</option>
+                            <option value="Select District" >Hoshangabad</option>
+                            <option value="Select District" >Indore</option>
+                            <option value="Select District" >Jabalpur</option>
+                            <option value="Select District" >Jhabua</option>
+                            <option value="Select District" >Katni</option>
+                            <option value="Select District" >Khandwa</option>
+                            <option value="Select District" >Khargone</option>
+                            <option value="Select District" >Mandla</option>
+                            <option value="Select District" >Mandsaur</option>
+                            <option value="Select District" >Morena</option>
+                            <option value="Select District" >Narsinghpur</option>
+                            <option value="Select District" >Neemuch</option>
+                            <option value="Select District" >Panna</option>
+                            <option value="Select District" >Raisen</option>
+                            <option value="Select District" >Rajgarh</option>
+                            <option value="Select District" >Ratlam</option>
+                            <option value="Select District" >Rewa</option>
+                            <option value="Select District" >Sagar</option>
+                            <option value="Select District" >Satna</option>
+                            <option value="Select District" >Sehore</option>
+                            <option value="Select District" >Seoni</option>
+                            <option value="Select District" >Shahdol</option>
+                            <option value="Select District" >Shajapur</option>
+                            <option value="Select District" >Sheopur</option>
+                            <option value="Select District" >Shivpuri</option>
+                            <option value="Select District" >Sidhi</option>
+                            <option value="Select District" >Singrauli</option>
+                            <option value="Select District" >Tikamgarh</option>
+                            <option value="Select District" >Ujjain</option>
+                            <option value="Select District" >Umaria</option>
+                            <option value="Select District" >Vidisha</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" name="address">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">PinCode <font color="red">*</font></span>
+                        <input type="number" name="pincode" placeholder="Enter PinCode"  required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Blood Group <font color="red">*</font></span>
+                        <select name="bg" id="blood" size="1">
+                            <option value="" selected="selected">---Select Your Blood Group---</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="AB-">O+</option>
+                            <option value="AB-">O-</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="gen" id="dot-1" value="Male">
+                    <input type="radio" name="gen" id="dot-2" value="Female">
+                    <input type="radio" name="gen" id="dot-3" value="Other">
+                    <input type="radio" name="gen" id="dot-4" value="Prefer Not to Say">
+                    <span class="gender-title">Gender <font color="red">*</font></span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Other</span>
+                        </label>
+                        <label for="dot-4">
+                            <span class="dot four"></span>
+                            <span class="gender">Prefer Not to Say</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5" style="font-size: 1.2rem;">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required>
+                    <label class="form-check-label" for="form2Example3">
+                     <a href="">I accept that I pass all parameters required to donate blood</a> 
+                    </label>
+                  </div>
+
+                  <div class="button" id="btn" onclick="btn">
+                    <input type="submit" value="Register">
+                  </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script>
+        var select = document.querySelector('#stateSel');
+    </script>
+
+</body>
+</html>

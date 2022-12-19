@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <%- include('css/contactUs'); %>
+
+</head>
+
+<body>
+    <!---header section starts-->
+    <!-- <nav class="upper-nav">
+
+    </nav> -->
+
+    <div class="navsec">
+        <nav class="navsection">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo"><img class="logoimg" src="images/logo.png" alt="Jeevan Maitree"></label>
+            <ul class="navul">
+                <li class="navli"><a class="active nava" href="/">HOME</a></li>
+            <li class="navli"><a class="nava" href="/">SERVICES</a></li>
+            <li class="navli"><a class="nava" href="/">TRACK</a></li>
+            <li class="navli"><a class="nava" href="/joinOurTeam">JOIN OUR TEAM</a></li>
+            <li class="navli"><a class="nava" href="#">REVIEW</a></li>
+            <li class="navli"><a class="nava" href="/contactUs">CONTACT US</a></li>
+            </ul>
+        </nav>
+        </section>
+
+        <!---header section ends-->
+
+        <div class="contactUs">
+            <div class="title">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="box">
+                <!-- message box -->
+
+                <div class="contact form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <div class="formBox">
+                            <div class="row50">
+                                <div class="inputBox">
+                                    <span>First Name <font color="red">*</font> </span>
+                                    <input type="text" placeholder="First Name" required>
+                                </div>
+                                <div class="inputBox">
+                                    <span>Last Name</span>
+                                    <input type="text" placeholder="Last Name">
+                                </div>
+                            </div>
+
+                            <div class="row50">
+                                <div class="inputBox">
+                                    <span>Email <font color="red">*</font> </span>
+                                    <input type="email" placeholder="abc@email.com" pattern=".+@.+.com" required>
+                                </div>
+                                <div class="inputBox">
+                                    <span>Mobile <font color="red">*</font> </span>
+                                    <input type="text" placeholder="+91 947 623 4293" required>
+                                </div>
+                            </div>
+
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <span>Message <font color="red">*</font> </span>
+                                    <textarea placeholder="Please write your message here..." rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <input type="submit" value="Send">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <!-- info box -->
+
+                <div class="contact info">
+                    <h3>Contact Info</h3>
+                    <div class="infoBox">
+                        <div>
+                            <span><i class="fa-solid fa-location-dot" id="locu"></i></span>
+                            <p>P.O. Tilwara Ghat, Near Bargi Hills, Jabalpur, Madhya Pradesh <br> India</p>
+                        </div>
+
+                        <div>
+                            <span><i class="fa-solid fa-envelope" id="locu"></i></span>
+                            <a href="mailto:loremipsum@gmail.com">jeevanmaitree@gmail.com</a>
+                        </div>
+
+                        <div>
+                            <span><i class="fa-solid fa-phone" id="locu"></i></span>
+                            <a href="mobile:+91 756 681 1199">+91 756 681 1199</a>
+                        </div>
+                        <!-- social media links -->
+                        <ul class="sci">
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- map box -->
+
+                <div class="contact map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.1240245974745!2d79.872678814907!3d23.12914148489925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981b3caccc2274b%3A0xc066b027d5fb1488!2sGyan%20Ganga%20Institute%20of%20Technology%20%26%20Sciences%20(GGITS)!5e0!3m2!1sen!2sin!4v1666244191900!5m2!1sen!2sin"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!---footer section starts--->
+        <section class="footer_body">
+            <footer>
+                <div class="container">
+                    <div class="sec aboutus">
+                        <h2>Who are We</h2>
+                        <!-- <img src="Frame 15.png" alt=""> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem officiis ullam
+                            praesentium
+                            minima tenetur nesciunt quidem ab facilis quo!</p>
+                        <ul class="footer_sci">
+                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="sec footer_quicklinks">
+                        <h2>Quick Links</h2>
+                        <ul>
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/">Services</a></li>
+                          <li><a href="#">Track</a></li>
+                          <li><a href="/joinOurTeam">Join Our Team</a></li>
+                          <li><a href="#">Review</a></li>
+                        </ul>
+                      </div>
+                
+                      <div class="sec footer_quicklinks">
+                        <h2>Services</h2>
+                        <ul>
+                          <li><a href="#">Bed Availability</a></li>
+                          <li><a href="/DonorHome">Blood Bank</a></li>
+                          <li><a href="/bookApp">Book Appointment</a></li>
+                          <li><a href="#">24/7 Ambulance</a></li>
+                        </ul>
+                      </div>
+                    <div class="footer_sec_contact">
+                        <h2>Contact Us</h2>
+                        <ul class="footer_contact_info">
+                            <li>
+                                <span><i class="fa-solid fa-location-dot"></i></span>
+                                <span> P.O. Tilwara Ghat, Near Bargi Hills, <br>
+                                    Jabalpur, Madhya Pradesh 482003</span>
+                            </li>
+
+                            <li>
+                                <span><i class="fa-solid fa-phone"></i></span>
+                                <p><a href="tel:+12345678900">098935 56449</a>
+                                </p>
+                            </li>
+
+                            <li>
+                                <span><i class="fa-solid fa-envelope"></i></span>
+                                <p><a href="mailto:jeevanmaitree@gmail.com">jeevanmaitree@gmail.com</a></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </footer>
+            <div class="footer_copyrightText">
+                <p>Copyright © 2022-JEEVAN MAITREE. All Rights Reserved.</p>
+            </div>
+        </section>
+
+</body>
+
+</html>

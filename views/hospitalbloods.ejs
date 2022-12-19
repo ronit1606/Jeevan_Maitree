@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+   
+   
+    
+      <%- include('css/style'); %>
+   
+    <title>Document</title>
+</head>
+<body>
+  <h1 class="heading"> <span>BLOOD</span> BANK</h1>
+  <div class='container1'>
+   
+    
+   
+   <% hospitalList.forEach(hospital =>{%>
+        
+          <div class="container1-div">
+            <i class="fa-solid fa-droplet"></i>
+            <div class="inner-contain">
+                <div >
+                  <h1>
+                  <%=  hospital.hname %>
+                </h1>
+                  <p><b>Address:</b><%= hospital.hadd %></p>
+                  <p><b>Email:</b><%= hospital.hemail %></p>
+                  <p><b>Telephone no.:</b><%= hospital.hphone %></p>
+                  <p><b>pincode:</b><%= hospital.hpin %></p>
+
+                  
+                  
+                </div>
+                <div class="container2">
+                  <% let Aposi %>
+                  <% let arr=[hospital.apos,hospital.aneg,hospital.bpos,hospital.bneg,hospital.opos,hospital.oneg,hospital.abpos,hospital.abneg] %>
+                  <% let arr1=['A+','A-','B+','B-','O-','O+','AB+','AB-'] %>
+                  <% for(let i=0;i<8;i++){ %>
+                   <div>
+                    
+                      <i class="fa-solid fa-droplet"></i>
+                      <h1><%= arr1[i] %></h1>
+                      
+                      
+                      <p><b><%= a=arr[i]  %> ml</b></p>
+                    
+                    
+                    
+                   </div> 
+                   <% }%>
+                     
+                  
+                </div>
+            </div>
+            
+            
+          </div>
+
+         
+        
+        
+     
+        
+        
+        <%})%>
+        
+      </div>
+      
+       
+
+</body>
+</html>
