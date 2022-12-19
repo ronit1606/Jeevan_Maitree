@@ -14,3 +14,4 @@ Furthermore, Our Website Displays The Location Of The Nearest Blood Bank As Well
 Further, We also allow Blood Camps to register themselves through our website.
 
 On The Hospital Side, We Make Sure That All Of The Hospitals That Are Registered Keep All Of Their Information Up To Date, Whether It Is Related To The Blood Availability, Bed Availability, Or Other Appointment Specifics, In Order To Help Us In Achieving Our Purpose.
+
